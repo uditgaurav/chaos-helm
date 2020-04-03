@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   kubernetes-chaos:
   - apiVersion: v1
+    appVersion: 1.2.2
+    created: 2020-04-03T18:30:29.052078441Z
+    description: A Helm chart to install litmus chaos experiments for kubernetes category
+      (chaos-chart)
+    digest: 0704531879b164e107e221b724efc5207313b131ae44e0cff4469ee13f7795de
+    name: kubernetes-chaos
+    urls:
+    - kubernetes-chaos/kubernetes-chaos-1.2.2.tgz
+    version: 1.2.2
+  - apiVersion: v1
     appVersion: 1.2.0
-    created: 2020-04-03T17:39:37.419433332Z
+    created: 2020-04-03T18:30:29.051684852Z
     description: A Helm chart to install litmus chaos experiments for kubernetes category
       (chaos-chart)
     digest: 2623ab1e3ec0b72608b57e102a44ec58730264bc30b4a0f09c9790e68db58ce9
@@ -11,4 +21,4 @@ entries:
     urls:
     - kubernetes-chaos/kubernetes-chaos-1.2.0.tgz
     version: 1.2.0
-generated: 2020-04-03T17:39:37.418602091Z
+generated: 2020-04-03T18:30:29.051153023Z
