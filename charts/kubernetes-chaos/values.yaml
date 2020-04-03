@@ -6,5 +6,24 @@ nameOverride: "k8s"
 fullnameOverride: "k8s"
 
 image:
-  repository: litmuschaos/ansible-runner
-  tag: 1.2.0
+  litmus: 
+    repository: litmuschaos/ansible-runner
+    tag: 1.2.2
+
+  pumba:
+    repository: gaiaadm/pumba
+    tag: 0.6.5
+
+  powerfulseal:
+    repository: store/bloomberg/powerfulseal
+    tag: 2.8.0
+
+  chaostoolkit:
+    repository: litmuschaos/chaostoolkit
+    tag: latest
+
+  md5sumStress:    
+    repository: litmuschaos/app-cpu-stress
+    tag: latest
+
+  
