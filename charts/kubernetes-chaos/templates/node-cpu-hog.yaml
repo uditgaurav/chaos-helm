@@ -1,0 +1,71 @@
+apiVersion: litmuschaos.io/v1alpha1
+description:
+  message: |
+    Give a cpu spike on a node belonging to a deployment
+kind: ChaosExperiment
+metadata:
+  name: {{ include "kubernetes-chaos.name" . }}-node-cpu-hog
+  version: 0.1.14
+  labels:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/chart: {{ include "kubernetes-chaos.chart" . }}
+spec:
+  definition:
+    scope: Cluster
+    permissions:
+      - apiGroups:
+          - ""
+          - "batch"
+          - "apps"
+          - "litmuschaos.io"
+        resources:
+          - "daemonsets"
+          - "jobs"
+          - "pods"
+          - "pods/log"
+          - "events"
+          - "chaosengines"
+          - "chaosexperiments"
+          - "chaosresults"
+        verbs:
+          - "create"
+          - "list"
+          - "get"
+          - "patch"
+          - "update"
+          - "delete"
+      - apiGroups:
+          - ""
+        resources: 
+          - "nodes"
+        verbs :
+          - "get"
+          - "list"
+    image: "litmuschaos/ansible-runner:latest"
+    args:
+    - -c
+    - ansible-playbook ./experiments/generic/node_cpu_hog/node_cpu_hog_ansible_logic.yml -i /etc/ansible/hosts -vv; exit 0
+    command:
+    - /bin/bash
+    env:
+
+    - name: ANSIBLE_STDOUT_CALLBACK
+      value: 'default'
+
+    - name: TOTAL_CHAOS_DURATION
+      value: '60'
+
+    # Period to wait before injection of chaos in sec
+    - name: RAMP_TIME
+      value: ''
+
+    # It supprts GKE and EKS Platform
+    # GKE is the default Platform
+    - name: PLATFORM
+      value: 'GKE'
+
+    - name: LIB
+      value: ''
+      
+    labels:
+      name: node-cpu-hog
