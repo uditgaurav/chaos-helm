@@ -8,7 +8,7 @@ fullnameOverride: "k8s"
 image:
   litmus: 
     repository: litmuschaos/ansible-runner
-    tag: 1.2.2
+    tag: 1.3.0
 
   pumba:
     repository: gaiaadm/pumba
@@ -22,8 +22,14 @@ image:
     repository: litmuschaos/chaostoolkit
     tag: latest
 
-  md5sumStress:    
+  md5sumCpuStress:    
     repository: litmuschaos/app-cpu-stress
     tag: latest
 
-  
+  ddMemoryStress:    
+    repository: litmuschaos/app-memory-stress
+    tag: latest
+
+  linuxStressNG:
+    repository: alexeiled/stress-ng
+    tag: latest 

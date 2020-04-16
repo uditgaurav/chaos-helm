@@ -59,6 +59,6 @@ spec:
       value: 'litmus'
 
     - name: LIB_IMAGE
-      value: "{{ .Values.image.md5sumStress.repository }}:{{ .Values.image.md5sumStress.tag }}" 
+      value: "{{ .Values.image.md5sumCpuStress.repository }}:{{ .Values.image.md5sumCpuStress.tag }}" 
     labels:
       name: pod-cpu-hog

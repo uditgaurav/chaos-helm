@@ -5,7 +5,7 @@ description:
 kind: ChaosExperiment
 metadata:
   name: {{ include "kubernetes-chaos.name" . }}-disk-fill
-  version: 0.1.9
+  version: 0.1.10
   labels: 
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
@@ -24,7 +24,6 @@ spec:
           - "pods/exec"
           - "pods/log"
           - "events"
-          - "daemonsets"
           - "chaosengines"
           - "chaosexperiments"
           - "chaosresults"
@@ -59,6 +58,9 @@ spec:
     - name: RAMP_TIME
       value: ''
       
+    - name: LIB
+      value: 'litmus'
+
     labels:
       name: disk-fill
 
