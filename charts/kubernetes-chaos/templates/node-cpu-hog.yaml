@@ -5,7 +5,7 @@ description:
 kind: ChaosExperiment
 metadata:
   name: {{ include "kubernetes-chaos.name" . }}-node-cpu-hog
-  version: 0.1.16
+  version: 0.1.17
   labels:
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
@@ -66,7 +66,7 @@ spec:
 
     ##TODO: Sync w/ linuxStressNG values
     - name: LIB_IMAGE
-      value: 'litmuschaos/cpu:latest'
+      value: "{{ .Values.image.litmusStressNG.repository }}:{{ .Values.image.litmusStressNG.tag }}"
       
     labels:
       name: node-cpu-hog

@@ -5,7 +5,7 @@ description:
 kind: ChaosExperiment
 metadata:
   name: {{ include "kubernetes-chaos.name" . }}-disk-fill
-  version: 0.1.10
+  version: 0.1.11
   labels: 
     instance: {{ .Release.Name }}
     chart: {{ include "kubernetes-chaos.chart" . }}
@@ -60,6 +60,11 @@ spec:
       
     - name: LIB
       value: 'litmus'
+
+    # Provide the container runtime path
+    # Default set to docker
+    - name: CONTAINER_PATH
+      value: '/var/lib/docker/containers'
 
     labels:
       name: disk-fill
