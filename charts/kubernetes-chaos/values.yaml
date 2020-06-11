@@ -31,6 +31,10 @@ image:
     repository: litmuschaos/app-memory-stress
     tag: latest
 
+  linuxStressNG:
+    repository: alexeiled/stress-ng
+    tag: latest 
+
   litmusStressNG:
     repository: litmuschaos/stress-ng
     tag: latest 
