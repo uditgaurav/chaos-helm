@@ -9,6 +9,7 @@ image:
   litmus: 
     repository: litmuschaos/ansible-runner
     tag: 1.4.0
+    pullPolicy: Always
 
   pumba:
     repository: gaiaadm/pumba
@@ -37,5 +38,3 @@ image:
   litmusStressNG:
     repository: litmuschaos/stress-ng
     tag: latest 
-
-  
