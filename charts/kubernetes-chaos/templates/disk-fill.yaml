@@ -35,6 +35,7 @@ spec:
           - "update"
           - "delete"
     image: "{{ .Values.image.litmus.repository }}:{{ .Values.image.litmus.tag }}" 
+    imagePullPolicy: {{ .Values.image.litmus.pullPolicy }}
     args:
     - -c
     - ansible-playbook ./experiments/generic/disk_fill/disk_fill_ansible_logic.yml -i /etc/ansible/hosts -vv; exit 0
