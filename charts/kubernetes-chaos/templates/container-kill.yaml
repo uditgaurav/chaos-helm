@@ -65,6 +65,11 @@ spec:
     - name: LIB
       value: 'pumba'
 
+    # provide the container runtime path for containerd
+    # applicable only for containerd runtime
+    - name: CONTAINER_PATH
+      value: '/run/containerd/containerd.sock'    
+
     # LIB_IMAGE can be - gaiaadm/pumba:0.6.5, gprasath/crictl:ci
     # For containerd image use: gprasath/crictl:ci
     - name: LIB_IMAGE  

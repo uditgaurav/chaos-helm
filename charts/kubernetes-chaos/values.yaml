@@ -8,7 +8,7 @@ fullnameOverride: "k8s"
 image:
   litmus: 
     repository: litmuschaos/ansible-runner
-    tag: 1.4.0
+    tag: 1.4.1
     pullPolicy: Always
 
   pumba:
@@ -38,3 +38,12 @@ image:
   litmusStressNG:
     repository: litmuschaos/stress-ng
     tag: latest 
+
+  litmusPodDeleteHelper:
+    repository: litmuschaos/pod-delete-helper
+    tag: latest
+
+  litmusContainerKillHelper:
+    repository: litmuschaos/container-kill-helper
+    tag: latest
+    

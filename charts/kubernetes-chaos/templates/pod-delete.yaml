@@ -72,6 +72,10 @@ spec:
       value: '5'
 
     - name: LIB
-      value: ''    
+      value: 'litmus'
+
+    - name: LIB_IMAGE
+      value: "{{ .Values.image.litmusPodDeleteHelper.repository }}:{{ .Values.image.litmusPodDeleteHelper.tag }}" 
+
     labels:
       name: pod-delete
