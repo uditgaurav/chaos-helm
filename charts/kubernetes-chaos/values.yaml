@@ -14,6 +14,7 @@ image:
   pumba:
     repository: gaiaadm/pumba
     tag: 0.6.5
+    libName: pumba
 
   powerfulseal:
     repository: store/bloomberg/powerfulseal
@@ -46,4 +47,4 @@ image:
   litmusContainerKillHelper:
     repository: litmuschaos/container-kill-helper
     tag: latest
-    
+    libName: litmus

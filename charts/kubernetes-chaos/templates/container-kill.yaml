@@ -63,15 +63,8 @@ spec:
 
     # It supports pumba and containerd 
     - name: LIB
-      value: 'pumba'
+      value: {{ .Values.pumba.libName }}
 
-    # provide the container runtime path for containerd
-    # applicable only for containerd runtime
-    - name: CONTAINER_PATH
-      value: '/run/containerd/containerd.sock'    
-
-    # LIB_IMAGE can be - gaiaadm/pumba:0.6.5, gprasath/crictl:ci
-    # For containerd image use: gprasath/crictl:ci
     - name: LIB_IMAGE  
       value: "{{ .Values.image.pumba.repository }}:{{ .Values.image.pumba.tag }}"
 
